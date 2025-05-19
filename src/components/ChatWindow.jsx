@@ -33,12 +33,16 @@ export default function ChatWindow({ messages, onSend, loading }) {
     sendLanguageToAPI(selectedLang)
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    if (!input.trim()) return
-    await onSend({ question: input, diacritics, level })
-    setInput('')
-  }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!input.trim()) return;
+
+  const currentInput = input; // store the input value temporarily
+  setInput(''); // clear the input immediately
+  await onSend({ question: currentInput, diacritics, level }); // send the stored value
+};
+
+
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
