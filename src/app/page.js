@@ -28,8 +28,8 @@ export default function Home() {
     }
 
     const endpoint = isLogin
-      ? 'https://14ec-110-39-39-254.ngrok-free.app/login'
-      : 'https://14ec-110-39-39-254.ngrok-free.app/signup'
+      ? 'https://1b34-110-39-39-254.ngrok-free.app/login'
+      : 'https://1b34-110-39-39-254.ngrok-free.app/signup'
 
     const body = isLogin
       ? { email, password }
@@ -41,7 +41,7 @@ export default function Home() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       })  
-      console.log(body)
+      // console.log(body)
 
       const data = await res.json()
 

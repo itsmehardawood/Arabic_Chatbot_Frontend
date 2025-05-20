@@ -82,7 +82,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
       }
       console.log('Sending payload:', payload)
       
-      const response = await fetch('https://14ec-110-39-39-254.ngrok-free.app/add_video', {
+      const response = await fetch('https://1b34-110-39-39-254.ngrok-free.app/add_video', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -156,7 +156,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
 
     setDocumentsLoading(true)
     try {
-      const response = await fetch('https://14ec-110-39-39-254.ngrok-free.app/documents', {
+      const response = await fetch('https://1b34-110-39-39-254.ngrok-free.app/documents', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'ngrok-skip-browser-warning': 'true',
@@ -168,11 +168,11 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
       }
 
       const data = await response.json()
-      console.log('Fetched documents response:', data)
+      // console.log('Fetched documents response:', data)
       
       const documentsArray = data.documents || data || []
-      console.log('Documents array:', documentsArray)
-      console.log('Sample document structure:', documentsArray[0])
+      // console.log('Documents array:', documentsArray)
+      // console.log('Sample document structure:', documentsArray[0])
       
       setDocuments(documentsArray)
     } catch (error) {
@@ -196,7 +196,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
     if (!confirmDelete) return
 
     try {
-      const deleteUrl = `https://14ec-110-39-39-254.ngrok-free.app/documents/${documentId}`
+      const deleteUrl = `https://1b34-110-39-39-254.ngrok-free.app/documents/${documentId}`
       console.log('DELETE URL:', deleteUrl)
 
       const response = await fetch(deleteUrl, {
@@ -247,7 +247,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
 
     setFlashcardsLoading(true)
     try {
-      const response = await fetch(`https://14ec-110-39-39-254.ngrok-free.app/flashcards/${userId}`, {
+      const response = await fetch(`https://1b34-110-39-39-254.ngrok-free.app/flashcards/${userId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'ngrok-skip-browser-warning': 'true',
@@ -313,7 +313,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
         }
 
         // Fetch user document
-        const res = await fetch(`https://14ec-110-39-39-254.ngrok-free.app/users/${userId}`, {
+        const res = await fetch(`https://1b34-110-39-39-254.ngrok-free.app/users/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
             'ngrok-skip-browser-warning': 'true', // Add this header for ngrok
@@ -541,7 +541,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
           
 
           {/* Flashcards Section */}
-          <div className="text-sm text-gray-300 space-y-2">
+          <div className="text-sm text-gray-300 space-y-2 ">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-gray-400">
                 <BookOpen size={16} />
@@ -566,7 +566,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
                 Loading flashcards...
               </div>
             ) : flashcards.length > 0 ? (
-              <ul className="space-y-2 max-h-60 overflow-y-auto">
+              <ul className="space-y-2 max-h-96 overflow-y-auto">
                 {flashcards.map((flashcard, index) => (
                   <li 
                     key={`flashcard-${flashcard._id || index}`} 
@@ -622,7 +622,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
           <LogOut className="mr-2" size={20} />
           Logout
         </button>
-        <h2 className="text-2xl font-bold mb-6">📄 Document Chat</h2>
+        <h2 className="text-2xl font-bold mb-6">📄Document </h2>
         {renderContent()}
       </div>
 
@@ -636,7 +636,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
           <LogOut className="mr-2" size={20} />
           Logout
         </button>
-        <h2 className="text-2xl font-bold mb-6">📄 Document Chat</h2>
+        <h2 className="text-2xl font-bold mb-6">📄 Document </h2>
         {renderContent()}
       </div>
 
