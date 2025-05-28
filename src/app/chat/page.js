@@ -11,7 +11,7 @@ export default function ChatPage() {
     if (!token) {
       router.push('/')
     }
-  }, [])
+  }, [router])
 
   return (
     <div>

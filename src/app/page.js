@@ -90,16 +90,16 @@ export default function Home() {
   return (
     <div>
       {/* Navbar */}
-      <nav className="bg-gradient-to-r from-black bg-gray-900 to-blue-900 p-4 shadow-lg">
+      <nav className="bg-slate-700  p-4 shadow-lg">
         <div className="flex justify-between items-center">
-          <div className="text-white font-bold text-2xl">
+          <div className="text-white font-bold text-2xl pl-5">
             Arabic Chatbot
           </div>
         </div>
       </nav>
 
       {/* Main Content */}
-      <div className="min-h-screen bg-gradient-to-br flex-col text-black from-gray-800 via-gray-800 to-black-500 flex justify-center items-center px-4">
+      <div className="min-h-screen  flex-col text-black bg-gradient-to-br from-blue-200 to-indigo-300  flex justify-center items-center px-4">
         <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
           <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
             {isLogin ? 'Welcome Back' : 'Create Your Account'}
