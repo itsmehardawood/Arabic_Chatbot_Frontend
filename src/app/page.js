@@ -7,17 +7,28 @@ export default function Home() {
   const [isLogin, setIsLogin] = useState(true)
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
-  const [language, setlangauge] = useState('')
+  const [language, setLanguage] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
   const router = useRouter()
 
   useEffect(() => {
-    const token = localStorage.getItem('access_token')
-    if (token) {
-      router.push('/chat')
+    // Check for existing token on component mount
+    const checkToken = () => {
+      const token = localStorage.getItem('access_token') // FIXED: Use getItem, not setItem
+      const userId = localStorage.getItem('user_id')
+      
+      if (token && userId) {
+        // Redirect to homepage if authenticated
+        router.push('/homepage')
+      } else {
+        setIsLoading(false) // Only show form if no token
+      }
     }
-  }, [])
+    
+    checkToken()
+  }, [router])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -28,12 +39,12 @@ export default function Home() {
     }
 
     const endpoint = isLogin
-      ? 'https://1b34-110-39-39-254.ngrok-free.app/login'
-      : 'https://1b34-110-39-39-254.ngrok-free.app/signup'
+      ? 'https://5516-110-39-39-254.ngrok-free.app/login'
+      : 'https://5516-110-39-39-254.ngrok-free.app/signup'
 
     const body = isLogin
       ? { email, password }
-      : { username, email, password, confirm_password: confirmPassword , language, is_admin: false }
+      : { username, email, password, confirm_password: confirmPassword, language, is_admin: false }
 
     try {
       const res = await fetch(endpoint, {
@@ -41,14 +52,17 @@ export default function Home() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       })  
-      // console.log(body)
 
       const data = await res.json()
 
       if (res.ok) {
         if (isLogin && data.access_token) {
-          localStorage.setItem('access_token', data.access_token)
-          router.push('/chat')
+          // Store both token and user_id - FIXED: Use consistent key names
+          localStorage.setItem('access_token', data.access_token) // FIXED: Use 'access_token'
+          localStorage.setItem('user_id', data.user_id || data.id || '1')
+          
+          // Immediate redirect after successful login
+          router.push('/homepage')
         } else if (!isLogin) {
           alert('Signup successful! You can now log in.')
           setIsLogin(true)
@@ -64,6 +78,15 @@ export default function Home() {
     }
   }
 
+  // Show loading or nothing while checking token
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <div className="text-xl">Loading...</div>
+      </div>
+    )
+  }
+
   return (
     <div>
       {/* Navbar */}
@@ -72,7 +95,6 @@ export default function Home() {
           <div className="text-white font-bold text-2xl">
             Arabic Chatbot
           </div>
-  
         </div>
       </nav>
 
@@ -118,17 +140,16 @@ export default function Home() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
-              
             )}
             {!isLogin && (
               <input
-              type="language"
-              placeholder="Enter Preffered Language"
-              className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              value={language}
-              onChange={(e) => setlangauge(e.target.value)}
-              required
-            />
+                type="text"
+                placeholder="Enter Preferred Language"
+                className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                required
+              />
             )}
             <button
               type="submit"
@@ -143,7 +164,7 @@ export default function Home() {
               onClick={() => setIsLogin(!isLogin)}
             >
               {isLogin
-                ? 'Don’t have an account? Sign Up'
+                ? `Don't have an account? Sign Up`
                 : 'Already have an account? Login'}
             </button>
           </div>

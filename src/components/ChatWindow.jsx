@@ -14,7 +14,7 @@ export default function ChatWindow({ messages, onSend, loading }) {
   // Function to send language to API
   const sendLanguageToAPI = async (lang) => {
     try {
-      await fetch('https://1b34-110-39-39-254.ngrok-free.app/language', {
+      await fetch('https://5516-110-39-39-254.ngrok-free.app/language', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

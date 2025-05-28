@@ -82,7 +82,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
       }
       console.log('Sending payload:', payload)
       
-      const response = await fetch('https://1b34-110-39-39-254.ngrok-free.app/add_video', {
+      const response = await fetch('https://5516-110-39-39-254.ngrok-free.app/add_video', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -156,7 +156,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
 
     setDocumentsLoading(true)
     try {
-      const response = await fetch('https://1b34-110-39-39-254.ngrok-free.app/documents', {
+      const response = await fetch('https://5516-110-39-39-254.ngrok-free.app/documents', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'ngrok-skip-browser-warning': 'true',
@@ -196,7 +196,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
     if (!confirmDelete) return
 
     try {
-      const deleteUrl = `https://1b34-110-39-39-254.ngrok-free.app/documents/${documentId}`
+      const deleteUrl = `https://5516-110-39-39-254.ngrok-free.app/documents/${documentId}`
       console.log('DELETE URL:', deleteUrl)
 
       const response = await fetch(deleteUrl, {
@@ -247,7 +247,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
 
     setFlashcardsLoading(true)
     try {
-      const response = await fetch(`https://1b34-110-39-39-254.ngrok-free.app/flashcards/${userId}`, {
+      const response = await fetch(`https://5516-110-39-39-254.ngrok-free.app/flashcards/${userId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'ngrok-skip-browser-warning': 'true',
@@ -313,7 +313,7 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
         }
 
         // Fetch user document
-        const res = await fetch(`https://1b34-110-39-39-254.ngrok-free.app/users/${userId}`, {
+        const res = await fetch(`https://5516-110-39-39-254.ngrok-free.app/users/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
             'ngrok-skip-browser-warning': 'true', // Add this header for ngrok
