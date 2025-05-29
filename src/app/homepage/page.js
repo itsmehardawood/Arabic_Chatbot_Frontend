@@ -62,7 +62,7 @@ export default function HomePage() {
           <div className="flex justify-between items-center h-16 ">
             <div className="flex items-center">
               <h1 className="text-2xl font-bold text-gray-900 text-white">
-                Arabic Chatbot
+                Arabic AI
               </h1>
             </div>
             <div className="flex items-center space-x-4">
@@ -92,7 +92,7 @@ export default function HomePage() {
             Welcome Back!
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Welcome to your intelligent Arabic Chatbot App. Start a new conversation or manage your subscription
+            Welcome to your intelligent Arabic AI App. Start a new conversation or manage your subscription
           </p>
         </div>
 

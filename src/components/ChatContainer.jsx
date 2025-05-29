@@ -35,7 +35,7 @@ export default function ChatContainer() {
     formData.append("file", file)
 
     try {
-      const url = `https://5516-110-39-39-254.ngrok-free.app/build_rag?user_id=${encodeURIComponent(user_id)}`
+      const url = `https://84f6-110-39-39-254.ngrok-free.app/build_rag?user_id=${encodeURIComponent(user_id)}`
 
       const res = await fetch(url, {
         method: 'POST',
@@ -66,7 +66,7 @@ export default function ChatContainer() {
 
     try {
       const bodyPayload = { question, user_id, level, diacritics }
-      const res = await fetch('https://5516-110-39-39-254.ngrok-free.app/query_rag', {
+      const res = await fetch('https://84f6-110-39-39-254.ngrok-free.app/query_rag', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(bodyPayload)

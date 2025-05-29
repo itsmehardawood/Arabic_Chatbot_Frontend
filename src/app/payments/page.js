@@ -57,7 +57,7 @@ function PaymentsContent() {
         return;
       }
 
-      const response = await fetch(`https://5516-110-39-39-254.ngrok-free.app/capture-order/${storedOrderId}`, {
+      const response = await fetch(`https://84f6-110-39-39-254.ngrok-free.app/capture-order/${storedOrderId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -173,7 +173,7 @@ function PaymentsContent() {
 
     setProcessingTrial(true);
     try {
-      const response = await fetch(`https://5516-110-39-39-254.ngrok-free.app/start-trial/${user.id}`, {
+      const response = await fetch(`https://84f6-110-39-39-254.ngrok-free.app/start-trial/${user.id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -203,7 +203,7 @@ function PaymentsContent() {
 
     setProcessingSubscription(plan);
     try {
-      const response = await fetch('https://5516-110-39-39-254.ngrok-free.app/create-subscription-order', {
+      const response = await fetch('https://84f6-110-39-39-254.ngrok-free.app/create-subscription-order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

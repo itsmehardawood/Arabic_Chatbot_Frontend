@@ -14,7 +14,7 @@ export default function ChatWindow({ messages, onSend, loading }) {
   // Function to send language to API
   const sendLanguageToAPI = async (lang) => {
     try {
-      await fetch('https://5516-110-39-39-254.ngrok-free.app/language', {
+      await fetch('https://84f6-110-39-39-254.ngrok-free.app/language', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const handleSubmit = async (e) => {
       
       {/* Header with Project Name and Language Switcher */}
       <div className="flex justify-between items-center px-4 md:px-6 py-3 bg-gray-900 border-b border-gray-700">
-        <h1 className="text-white font-bold text-lg pl-12 py-2">Arabic Chatbot</h1>
+        <h1 className="text-white font-bold text-lg pl-12 py-2">Arabic AI</h1>
 
         <div className="relative">
           <select

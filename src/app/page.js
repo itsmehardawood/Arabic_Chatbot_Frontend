@@ -39,8 +39,8 @@ export default function Home() {
     }
 
     const endpoint = isLogin
-      ? 'https://5516-110-39-39-254.ngrok-free.app/login'
-      : 'https://5516-110-39-39-254.ngrok-free.app/signup'
+      ? 'https://84f6-110-39-39-254.ngrok-free.app/login'
+      : 'https://84f6-110-39-39-254.ngrok-free.app/signup'
 
     const body = isLogin
       ? { email, password }
@@ -93,13 +93,13 @@ export default function Home() {
       <nav className="bg-slate-700  p-4 shadow-lg">
         <div className="flex justify-between items-center">
           <div className="text-white font-bold text-2xl pl-5">
-            Arabic Chatbot
+            Arabic AI
           </div>
         </div>
       </nav>
 
       {/* Main Content */}
-      <div className="min-h-screen  flex-col text-black bg-gradient-to-br from-blue-200 to-indigo-300  flex justify-center items-center px-4">
+      <div className="min-h-screen  flex-col text-black bg-gradient-to-br from-purple-300 to-indigo-500  flex justify-center items-center px-4">
         <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
           <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
             {isLogin ? 'Welcome Back' : 'Create Your Account'}
