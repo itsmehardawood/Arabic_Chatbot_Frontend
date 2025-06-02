@@ -39,8 +39,8 @@ export default function Home() {
     }
 
     const endpoint = isLogin
-      ? 'https://84f6-110-39-39-254.ngrok-free.app/login'
-      : 'https://84f6-110-39-39-254.ngrok-free.app/signup'
+      ? 'https://itsmehardawood-arabic-chatbot.hf.space/login'
+      : 'https://itsmehardawood-arabic-chatbot.hf.space/signup'
 
     const body = isLogin
       ? { email, password }

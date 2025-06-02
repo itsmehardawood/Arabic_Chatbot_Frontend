@@ -14,7 +14,7 @@ export default function ChatWindow({ messages, onSend, loading }) {
   // Function to send language to API
   const sendLanguageToAPI = async (lang) => {
     try {
-      await fetch('https://84f6-110-39-39-254.ngrok-free.app/language', {
+      await fetch('https://itsmehardawood-arabic-chatbot.hf.space/language', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

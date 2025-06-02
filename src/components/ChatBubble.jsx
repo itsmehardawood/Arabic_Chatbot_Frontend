@@ -213,7 +213,7 @@ export default function MessageBubble({
       // Get the token for authorization header
       const token = localStorage.getItem('access_token') || localStorage.getItem('token') || localStorage.getItem('accessToken');
       
-      const response = await fetch('https://84f6-110-39-39-254.ngrok-free.app/save_flashcard', {
+      const response = await fetch('https://itsmehardawood-arabic-chatbot.hf.space/save_flashcard', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
