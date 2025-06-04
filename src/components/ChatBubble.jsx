@@ -642,7 +642,7 @@ export default function MessageBubble({
               className="rounded-md shadow-md"
             />
             <a 
-              href={youtube.watch_url}
+              href={youtube.embed_url}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 underline text-xs mt-1 block"
