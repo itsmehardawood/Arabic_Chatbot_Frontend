@@ -946,7 +946,7 @@ function PaymentsContent() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-2">Free Trial</h3>
             <div className="text-4xl font-bold text-green-600 mb-2">Free</div>
-            <p className="text-gray-500 mb-6">7 days trial</p>
+            <p className="text-gray-500 mb-6">3 days trial</p>
             
             {isTrialActive && (
               <div className="bg-yellow-100 border border-yellow-300 rounded-lg p-3 mb-6">
