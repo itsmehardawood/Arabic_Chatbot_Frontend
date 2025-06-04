@@ -622,7 +622,14 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
           <LogOut className="mr-2" size={20} />
           Logout
         </button>
-        <h2 className="text-2xl font-bold mb-6">📄Document </h2>
+        {!isAdmin &&(
+        <h2 className="text-2xl font-bold mb-6">📄FlashCards </h2>
+
+        )}
+          {isAdmin &&(
+        <h2 className="text-2xl font-bold mb-6">📄Documents </h2>
+
+        )}
         {renderContent()}
       </div>
 
@@ -636,8 +643,16 @@ export default function SidebarUpload({ onUpload, uploadMessage }) {
           <LogOut className="mr-2" size={20} />
           Logout
         </button>
-        <h2 className="text-2xl font-bold mb-6">📄 Document </h2>
-        {renderContent()}
+    {!isAdmin &&(
+        <h2 className="text-2xl font-bold mb-6">📄FlashCards </h2>
+
+        )}
+            {isAdmin &&(
+        <h2 className="text-2xl font-bold mb-6">📄Documents </h2>
+
+        )}
+        
+                {renderContent()}
       </div>
 
       {/* Add Video Modal */}

@@ -7,7 +7,7 @@ export default function Home() {
   const [isLogin, setIsLogin] = useState(true)
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
-  const [language, setLanguage] = useState('')
+  const [language, setLanguage] = useState('Arabic') // Set Arabic as default
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [isLoading, setIsLoading] = useState(true)
@@ -142,14 +142,16 @@ export default function Home() {
               />
             )}
             {!isLogin && (
-              <input
-                type="text"
-                placeholder="Enter Preferred Language"
-                className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              <select
+                className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white"
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
                 required
-              />
+              >
+                <option value="Arabic">Arabic</option>
+                <option value="English">English</option>
+                <option value="Deutsch">Deutsch</option>
+              </select>
             )}
             <button
               type="submit"
